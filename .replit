@@ -1,0 +1,29 @@
+modules = ["nodejs-20"]
+run = "npm install && npx expo start --tunnel"
+entrypoint = "App.tsx"
+hidden = [".config", ".git", "node_modules", ".expo"]
+
+[nix]
+channel = "stable-24_05"
+
+[env]
+EXPO_NO_TELEMETRY = "1"
+
+[[ports]]
+localPort = 8081
+externalPort = 80
+
+[[ports]]
+localPort = 19000
+externalPort = 3000
+
+[[ports]]
+localPort = 19001
+externalPort = 3001
+
+[[ports]]
+localPort = 19002
+externalPort = 3002
+
+[agent]
+expertMode = true

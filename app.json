@@ -1,0 +1,83 @@
+{
+  "expo": {
+    "name": "Stagey",
+    "slug": "stagey-mobile",
+    "version": "1.0.0",
+    "description": "Stagey is the UK's community hub for amateur, youth and community musical theatre — discover shows, find auditions and castings, connect with societies, and access tools, guides and resources.",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "stagey",
+    "userInterfaceStyle": "dark",
+    "primaryColor": "#8B5CF6",
+    "newArchEnabled": true,
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "notification": {
+      "icon": "./assets/notification-icon.png",
+      "color": "#8B5CF6",
+      "iosDisplayInForeground": true
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.stagey.mobile",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "UIBackgroundModes": [
+          "remote-notification"
+        ]
+      }
+    },
+    "android": {
+      "package": "app.stagey.mobile",
+      "versionCode": 1,
+      "edgeToEdgeEnabled": true,
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0A0F",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "NOTIFICATIONS"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-web-browser",
+      "expo-video",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#0A0A0F"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Stagey needs access to your photos so you can add images to listings, profiles and mood boards."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#8B5CF6"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": ""
+      }
+    }
+  }
+}
