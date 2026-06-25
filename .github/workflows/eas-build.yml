@@ -20,7 +20,7 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps --ignore-scripts
+        run: yarn install --network-timeout 300000
 
       - name: Setup EAS
         uses: expo/expo-github-action@v8
