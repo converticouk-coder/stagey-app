@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Build iOS & Android
+  build-android:
+    name: Build Android
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -30,7 +30,4 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Build Android (development)
-        run: eas build --profile development --platform android --non-interactive
-
-      - name: Build iOS (development)
-        run: eas build --profile development --platform ios --non-interactive
+        run: eas build --profile development --platform android --non-interactive --no-wait
