@@ -10,6 +10,8 @@ jobs:
   build-android:
     name: Build Android
     runs-on: ubuntu-latest
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,5 +32,3 @@ jobs:
 
       - name: Build Android (development)
         run: eas build --profile development --platform android --non-interactive --no-wait
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
