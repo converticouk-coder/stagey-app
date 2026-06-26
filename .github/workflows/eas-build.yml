@@ -32,3 +32,29 @@ jobs:
 
       - name: Build Android (development)
         run: eas build --profile development --platform android --non-interactive --no-wait
+
+  build-ios:
+    name: Build iOS
+    runs-on: ubuntu-latest
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: yarn install --network-timeout 300000
+
+      - name: Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Build iOS (development)
+        run: eas build --profile development --platform ios --non-interactive --no-wait
